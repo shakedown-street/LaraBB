@@ -5,5 +5,5 @@ Forum boards are my go-to litmus test when attempting to learn a web framework a
 ## Run
 
 ```bash
-php artisan serve
+composer run dev
 ```

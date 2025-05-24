@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IndexController;
 
-Route::get('/', function () {
-    return view('index');
-})
+Route::get('/', [IndexController::class, 'index'])
     ->name('index');
 
 Route::get('/auth/register', [AuthController::class, 'register'])
@@ -22,3 +22,6 @@ Route::post('/auth/login', [AuthController::class, 'login'])
 
 Route::post('/auth/logout', [AuthController::class, 'logout'])
     ->name('auth.logout');
+
+Route::get('/categories/{category}', [CategoryController::class, 'show'])
+    ->name('categories.show');
